@@ -1,17 +1,28 @@
-import express from 'express'
-const app = express()
-import userRoutes from './Routes/user.js';
-import cors from 'cors'
-import dotenv from "dotenv";
-dotenv.config();
+import mongoose from "mongoose";
+import express from 'express';
+import dotenv from 'dotenv';
+import userRoutes from './Routes/user.js'
+import podcastRoutes from './Routes/podcast.js';
 
-const PORT = process.env.PORT || 5000;
-import "./db.js"
+dotenv.config()
 
+const app = express();
+
+//middleware
 app.use(express.json())
-app.use(cors())
-app.use("/api/user", userRoutes)
 
-app.listen(PORT, ()=>{
-    console.log(`http://localhost:${PORT}`)
-})
+//routes
+app.use('/api/user',userRoutes)
+app.use('/api/podcast',podcastRoutes)
+
+//connect to db
+mongoose.connect(process.env.MONG_URI)
+    .then(() => {
+        //listen for requests
+        app.listen(process.env.PORT, () => {
+            console.log('Connected to the db and listening to port ' + process.env.PORT);
+        })
+    })
+    .catch((err) => {
+        console.log(err);
+    })

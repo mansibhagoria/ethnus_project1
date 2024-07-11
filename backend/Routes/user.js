@@ -14,7 +14,7 @@ router.post("/login", async (req, res) => {
     }
     if (!user) {
       return res.json({ success: false, message: "Invalid Credentials" });
-    } 
+    }
     else {
       if (user.password !== password) {
         return res.json({ success: false, message: "Invalid Credentials" });
@@ -68,6 +68,3 @@ router.get('/me', async (req, res) => {
 })
 
 export default router;
-
-
-// Tutorial idk   23...

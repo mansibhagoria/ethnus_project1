@@ -54,7 +54,7 @@ const Login = () => {
             </header>
             <div className="container py-10">
                 <div className='bg-black text-center w-1/2 mx-auto py-10 rounded-lg'>
-                    <h1 className='text-5xl font-bold my-12'>Log in to Spotify</h1>
+                    <h1 className='text-5xl font-bold my-12'>Log in to Caststream</h1>
                     <div className="border-b border-gray-200 w-3/4 mx-auto my-4"></div>
                     <form onSubmit={loginUser} className='text-center mx-auto w-1/2 py-4'>
                         <div className='w-full text-left py-4'>
@@ -73,7 +73,7 @@ const Login = () => {
                         </div>
                     </form>
                     <div className="border-b border-gray-200 w-3/4 mx-auto my-4"></div>
-                    <p className='pt-8'><span className='text-gray-300 font-semibold'>Dont have an account?</span> <Link to="/signup" className='text-white font-semibold underline text-center hover:text-green-400'>Sign up for Spotify</Link></p>
+                    <p className='pt-8'><span className='text-gray-300 font-semibold'>Dont have an account?</span> <Link to="/signup" className='text-white font-semibold underline text-center hover:text-green-400'>Sign up for Caststream</Link></p>
                 </div>
             </div>
         </>

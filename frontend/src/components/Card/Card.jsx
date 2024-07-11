@@ -28,14 +28,14 @@ const Card = ({song, idx}) => {
 
   return (
     song && (
-      <div className='card col-span-1 p-4 rounded-lg hover:'>
+      <div className='card pink col-span-1 p-4 rounded-lg hover:'>
         <div className="relative h-[75%] w-full">
         <img src={song.img} alt="" className='image-fit rounded-sm'/>
         {
           masterSong.id === song.id && isPlaying
           ? (
             <button onClick={handlePause} className='play_btn flex justify-center absolute bottom-0 right-0 rounded-full items-center bg-green-600 p-3'>
-            <FaPause className='text-black text-xl' />
+            <FaPause className='text-purple text-xl' />
             </button>
             ) : (
             <button onClick={() => handlePlay(song)} className='play_btn flex justify-center absolute bottom-0 right-0 rounded-full items-center bg-green-600 p-3'>
